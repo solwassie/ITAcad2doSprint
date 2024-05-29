@@ -114,7 +114,7 @@ amb un valor comprès entre 100 i 200 euros i en alguna d'aquestes dates: 29 d'a
 SELECT company.company_name, company.phone, company.country, DATE(transaction.timestamp) AS data, 
 transaction.amount
 FROM company
-RIGHT JOIN transaction
+INNER JOIN transaction
 ON transaction.company_id = company.id
 WHERE transaction.amount BETWEEN 100 AND 200
 AND DATE(transaction.timestamp) IN ('2021-04-29','2021-07-20','2022-03-13')
